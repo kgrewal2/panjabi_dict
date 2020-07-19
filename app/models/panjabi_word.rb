@@ -1,0 +1,2 @@
+class PanjabiWord < ApplicationRecord
+end

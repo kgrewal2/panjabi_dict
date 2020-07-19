@@ -1,0 +1,2 @@
+module PanjabiWordsHelper
+end

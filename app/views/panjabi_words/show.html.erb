@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gurmukhi:</strong>
+  <%= @panjabi_word.gurmukhi %>
+</p>
+
+<p>
+  <strong>Shahmukhi:</strong>
+  <%= @panjabi_word.shahmukhi %>
+</p>
+
+<p>
+  <strong>Roman:</strong>
+  <%= @panjabi_word.roman %>
+</p>
+
+<p>
+  <strong>Phonetics:</strong>
+  <%= @panjabi_word.phonetics %>
+</p>
+
+<p>
+  <strong>Anuvaad:</strong>
+  <%= @panjabi_word.anuvaad %>
+</p>
+
+<p>
+  <strong>Usage:</strong>
+  <%= @panjabi_word.usage %>
+</p>
+
+<p>
+  <strong>Pos:</strong>
+  <%= @panjabi_word.pos %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @panjabi_word.score %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @panjabi_word.approved %>
+</p>
+
+<%= link_to 'Edit', edit_panjabi_word_path(@panjabi_word) %> |
+<%= link_to 'Back', panjabi_words_path %>

@@ -1,0 +1,62 @@
+<%= form_with(model: panjabi_word, local: true) do |form| %>
+  <% if panjabi_word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(panjabi_word.errors.count, "error") %> prohibited this panjabi_word from being saved:</h2>
+
+      <ul>
+        <% panjabi_word.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :gurmukhi %>
+    <%= form.text_field :gurmukhi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shahmukhi %>
+    <%= form.text_field :shahmukhi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :roman %>
+    <%= form.text_field :roman %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phonetics %>
+    <%= form.text_field :phonetics %>
+  </div>
+
+  <div class="field">
+    <%= form.label :anuvaad %>
+    <%= form.text_area :anuvaad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :usage %>
+    <%= form.text_area :usage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pos %>
+    <%= form.text_field :pos %>
+  </div>
+
+  <div class="field">
+    <%= form.label :score %>
+    <%= form.number_field :score %>
+  </div>
+
+  <div class="field">
+    <%= form.label :approved %>
+    <%= form.check_box :approved %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

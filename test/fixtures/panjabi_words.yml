@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gurmukhi: MyString
+  shahmukhi: MyString
+  roman: MyString
+  phonetics: MyString
+  anuvaad: MyText
+  usage: MyText
+  pos: MyString
+  score: 1
+  approved: false
+
+two:
+  gurmukhi: MyString
+  shahmukhi: MyString
+  roman: MyString
+  phonetics: MyString
+  anuvaad: MyText
+  usage: MyText
+  pos: MyString
+  score: 1
+  approved: false
