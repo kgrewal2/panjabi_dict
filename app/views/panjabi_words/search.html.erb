@@ -1,0 +1,36 @@
+
+<h1 class="title is-4">Search Results</h1>
+
+<% @results.each do |result| %>
+  <div class="container" >
+    <div class="notification" style="border-radius:30px">
+      <h1 class="title is-3">
+        <%= result.gurmukhi %>
+      </h1>
+      <h1 class="subtitle is-6" style="color:red">
+        <%= result.pos if !result.pos.nil? %>
+      </h1>
+      <p style="font-style:itaclic; margin-bottom:8px">
+      <%= result.phonetics if !result.phonetics.nil? %>
+      </p>
+      <p style="font-size:20px">
+      <%= result.anuvaad if !result.anuvaad.nil? %>
+      </p>
+      <p >
+      <%= result.shahmukhi if  !result.shahmukhi.nil? %>
+      </p>
+      <p style="font-size:16px; margin-top:5px; color: grey">
+      <%= result.usage if !result.usage.nil? %>
+      </p>
+      <p>
+      <%= result.score if !result.score.nil? %>
+      </p>
+      <p style="margin-top:10px"> Submitted by:
+      <%= User.find(result.user_id).email %>
+      </p>
+    </div>
+    </br>
+  </div>
+<% end %>
+
+
