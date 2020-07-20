@@ -12,6 +12,7 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= render file: "/layouts/_navbar.html.erb", layout: false %>
     <%= yield %>
   </body>
 </html>

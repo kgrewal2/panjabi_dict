@@ -25,10 +25,10 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-# Authorization
+# EXTRA GEMS
+# User-Authentication
 gem 'devise'
-
-# Rails Console
+# Error with rails console
 gem 'irb'
 
 # Reduces boot times through caching; required in config/boot.rb
