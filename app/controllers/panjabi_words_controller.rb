@@ -14,7 +14,7 @@ class PanjabiWordsController < ApplicationController
 
   # GET /panjabi_words/new
   def new
-    @panjabi_word = PanjabiWord.new
+    @panjabi_word = current_user.panjabi_words.build
   end
 
   # GET /panjabi_words/1/edit
@@ -24,7 +24,7 @@ class PanjabiWordsController < ApplicationController
   # POST /panjabi_words
   # POST /panjabi_words.json
   def create
-    @panjabi_word = PanjabiWord.new(panjabi_word_params)
+    @panjabi_word = current_user.panjabi_words.build(panjabi_word_params)
 
     respond_to do |format|
       if @panjabi_word.save
