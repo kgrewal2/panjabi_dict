@@ -1,0 +1,32 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Gurmukhi</th>
+      <th>Shahmukhi</th>
+      <th>Roman</th>
+      <th>Phonetics</th>
+      <th>Anuvaad</th>
+      <th>Usage</th>
+      <th>Pos</th>
+      <th>Score</th>
+      <th>Approved</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% current_user.panjabi_words.each do |panjabi_word| %>
+      <tr>
+        <td><%= panjabi_word.gurmukhi %></td>
+        <td><%= panjabi_word.shahmukhi %></td>
+        <td><%= panjabi_word.roman %></td>
+        <td><%= panjabi_word.phonetics %></td>
+        <td><%= panjabi_word.anuvaad %></td>
+        <td><%= panjabi_word.usage %></td>
+        <td><%= panjabi_word.pos %></td>
+        <td><%= panjabi_word.score %></td>
+        <td><%= panjabi_word.approved %></td>
+        <td><%= link_to 'Delete', panjabi_word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

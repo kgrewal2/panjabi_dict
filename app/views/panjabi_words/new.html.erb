@@ -4,7 +4,7 @@
 
 <%# link_to 'Back', panjabi_words_path %>
 
-<%= form_with model: @panjabi_word do |form| %>
+<%= form_with model: @panjabi_word, html: { autocomplete: "off" } do |form| %>
   <%= form.label(:roman, "Roman", class: "label") %>
   <%= form.text_field(:roman, class: "input", type: "text") %>
 
@@ -27,6 +27,6 @@
   <%= select(:panjabi_word, :pos, ['ਨਾਂਵ (Noun)','ਪੜਨਾਂਵ (Pronoun)','ਵਿਸ਼ੇਸ਼ਣ (Adjective)','ਕਿਰਿਆ (Verb)','ਕਿਰਦੰਤ (Participle)','ਕ੍ਰਿਆ ਵਿਸ਼ੇਸ਼ਣ (Adverb)','ਸੰਬੰਧਕ (Postposition)']) %>
   </br>
   <%= form.label(:translation, "Translation", class: "label") %>
-  <%= form.text_field(:translation, class: "textarea" ) %>
+  <%= form.text_field(:translation) %>
   <%= form.submit("Submit") %>
 <% end %>

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   root 'homepage#home'
   get 'homepage/home'
   get '/search' => 'panjabi_words#search', :as => 'search_page'
+  get '/submissions' => 'panjabi_words#submissions', :as => 'submissions'
 
 end
