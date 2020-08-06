@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <h2 class="title is-4">Panjabi Word</h2>
+
   <div class="field">
     <%= form.label :gurmukhi, class:"label" %>
     <%= form.text_field :gurmukhi, class:"input" %>
@@ -42,27 +44,38 @@
   </div>
 
   <%# <div class="field"> %>
-  <%#   <%= form.label :pos, class:"label" %1> %>
-  <%#   <%= form.text_field :pos, class:"select" %1> %>
-  <%# </div> %>
+    <%#   <%= form.label :pos, class:"label" %1> %>
+    <%#   <%= form.text_field :pos, class:"select" %1> %>
+    <%# </div> %>
 
-  <select name="panjabi_word[pos]" id="panjabi_word_pos">
-    <% pos = Global::Vars::POS %>
-    <% for i in 0..pos.length()-1 do %>
-      <% option = pos[i] %>
-      <option value""><%= option %></p>
-    <% end %>
-</select>
+  <div class="field">
+    <%= form.label :pos, class:"label" %>
+    <select name="panjabi_word[pos]" id="panjabi_word_pos">
+      <% pos = Global::Vars::POS %>
+      <% for i in 0..pos.length()-1 do %>
+        <% option = pos[i] %>
+        <option value""><%= option %></p>
+      <% end %>
+    </select>
+  </div>
 
-  <%# <div class="field"> %>
-  <%#   <%= form.label :score, class:"label" %1> %>
-  <%#   <%= form.number_field :score, class:"input" %1> %>
-  <%# </div> %>
+  <h2 class="title is-4">Translation</h2>
 
-  <%# <div class="field"> %>
-  <%#   <%= form.label :approved, class:"label" %1> %>
-  <%#   <%= form.check_box :approved, class:"input" %1> %>
-  <%# </div> %>
+  <div class="field">
+    <%= form.label :language, class:"label" %>
+    <select name="panjabi_word[language]" id="panjabi_word_language">
+      <% languages = Global::Vars::LANGUAGES %>
+      <% for i in 0..languages.length()-1 do %>
+        <% option = languages[i] %>
+        <option value""><%= option %></p>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="field">
+    <%= form.label :translation, class:"label" %>
+    <%= form.text_field :translation, class:"input" %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

@@ -24,12 +24,22 @@ class PanjabiWordsController < ApplicationController
   # POST /panjabi_words
   # POST /panjabi_words.json
   def create
-	@panjabi_word = current_user.panjabi_words.build(panjabi_word_params)
-    @panjabi_word[:score]=0
+	@panjabi_word = current_user.panjabi_words.new()
+
+    @panjabi_word.gurmukhi  = panjabi_word_params[:gurmukhi]
+    @panjabi_word.shahmukhi = panjabi_word_params[:shahmukhi]
+    @panjabi_word.roman     = panjabi_word_params[:roman]
+    @panjabi_word.phonetics = panjabi_word_params[:phonetics]
+    @panjabi_word.usage     = panjabi_word_params[:usage]
+    @panjabi_word.pos       = Global::Vars::POS.find_index(panjabi_word_params[:pos])
+    @panjabi_word.score     = 0
+
     @panjabi_word.save
 
     @translation = @panjabi_word.translations.new()
-    byebug
+    @translation.language = 1
+    @translation.meaning = panjabi_word_params[:translation]
+
 	respond_to do |format|
 	  if @translation.save
 		format.html { redirect_to @panjabi_word, notice: 'Panjabi word was successfully created.' }
@@ -82,6 +92,6 @@ class PanjabiWordsController < ApplicationController
 
 	# Only allow a list of trusted parameters through.
 	def panjabi_word_params
-	  params.require(:panjabi_word).permit(:gurmukhi, :shahmukhi, :roman, :phonetics, :anuvaad, :usage, :pos, :score, :approved)
+	  params.require(:panjabi_word).permit(:gurmukhi, :shahmukhi, :roman, :phonetics, :anuvaad, :usage, :pos, :score, :approved, :translation)
 	end
   end

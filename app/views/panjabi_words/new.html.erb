@@ -1,32 +1,6 @@
 <h1>New Panjabi Word</h1>
 
-<%# render 'form', panjabi_word: @panjabi_word %>
+<%= render 'form', panjabi_word: @panjabi_word %>
 
-<%# link_to 'Back', panjabi_words_path %>
+<%= link_to 'Back', panjabi_words_path %>
 
-<%= form_with model: @panjabi_word, html: { autocomplete: "off" } do |form| %>
-  <%= form.label(:roman, "Roman", class: "label") %>
-  <%= form.text_field(:roman, class: "input", type: "text") %>
-
-  <%= form.label(:gurmukhi, "Gurmukhi", class: "label") %>
-  <%= form.text_field(:gurmukhi, class: "input", type: "text") %>
-
-  <%= form.label(:shahmukhi, "Shahmukhi", class: "label") %>
-  <%= form.text_field(:shahmukhi, class: "input", type: "text") %>
-
-  <%= form.label(:phonetics, "Phonetics", class: "label") %>
-  <%= form.text_field(:phonetics, class: "input", type: "text") %>
-
-  <%= form.label(:anuvaad, "Anuvaad", class: "label") %>
-  <%= form.text_field(:anuvaad, class: "input", type: "text") %>
-
-  <%= form.label(:usage, "Usage", class: "label") %>
-  <%= form.text_area(:usage, class: "textarea" ) %>
-  </br>
-  <%= form.label(:pos, "Part of Speech", class: "label") %>
-  <%= select(:panjabi_word, :pos, ['ਨਾਂਵ (Noun)','ਪੜਨਾਂਵ (Pronoun)','ਵਿਸ਼ੇਸ਼ਣ (Adjective)','ਕਿਰਿਆ (Verb)','ਕਿਰਦੰਤ (Participle)','ਕ੍ਰਿਆ ਵਿਸ਼ੇਸ਼ਣ (Adverb)','ਸੰਬੰਧਕ (Postposition)']) %>
-  </br>
-  <%= form.label(:translation, "Translation", class: "label") %>
-  <%= form.text_field(:translation) %>
-  <%= form.submit("Submit") %>
-<% end %>
