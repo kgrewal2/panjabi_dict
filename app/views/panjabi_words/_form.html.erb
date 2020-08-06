@@ -63,7 +63,7 @@
 
   <div class="field">
     <%= form.label :language, class:"label" %>
-    <select name="panjabi_word[language]" id="panjabi_word_language">
+    <select name="panjabi_word[translation_language_id]" id="panjabi_word_language_id">
       <% languages = Global::Vars::LANGUAGES %>
       <% for i in 0..languages.length()-1 do %>
         <% option = languages[i] %>
@@ -73,12 +73,12 @@
   </div>
 
   <div class="field">
-    <%= form.label :translation, class:"label" %>
-    <%= form.text_field :translation, class:"input" %>
+    <%= form.label :meaning, class:"label" %>
+    <%= form.text_field :translation_meaning, class:"input" %>
   </div>
 
   <div class="field">
-    <%= form.label :translation_usage, class:"label" %>
+    <%= form.label :usage, class:"label" %>
     <%= form.text_field :translation_usage, class:"input" %>
   </div>
 

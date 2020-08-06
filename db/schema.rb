@@ -15,12 +15,6 @@ ActiveRecord::Schema.define(version: 2020_08_06_050800) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "languages", force: :cascade do |t|
-    t.string "langcode"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "panjabi_words", force: :cascade do |t|
     t.string "gurmukhi"
     t.string "shahmukhi"
@@ -28,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_08_06_050800) do
     t.string "phonetics"
     t.text "anuvaad"
     t.text "usage"
-    t.string "pos"
+    t.integer "pos"
     t.integer "score"
     t.boolean "approved"
     t.datetime "created_at", precision: 6, null: false

@@ -10,6 +10,7 @@
       <th>Pos</th>
       <th>Score</th>
       <th>Approved</th>
+      <th>Total Translations</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,6 +26,8 @@
         <td><%= panjabi_word.pos %></td>
         <td><%= panjabi_word.score %></td>
         <td><%= panjabi_word.approved %></td>
+        <td><%= panjabi_word.translations.length() %></td>
+
         <td><%= link_to 'Delete', panjabi_word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

@@ -7,7 +7,7 @@ class CreatePanjabiWords < ActiveRecord::Migration[6.0]
       t.string :phonetics
       t.text :anuvaad
       t.text :usage
-      t.string :pos
+      t.integer :pos
       t.integer :score
       t.boolean :approved
 

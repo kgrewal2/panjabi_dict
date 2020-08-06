@@ -30,15 +30,18 @@ class PanjabiWordsController < ApplicationController
     @panjabi_word.shahmukhi = panjabi_word_params[:shahmukhi]
     @panjabi_word.roman     = panjabi_word_params[:roman]
     @panjabi_word.phonetics = panjabi_word_params[:phonetics]
+    @panjabi_word.anuvaad   = panjabi_word_params[:anuvaad]
     @panjabi_word.usage     = panjabi_word_params[:usage]
     @panjabi_word.pos       = Global::Vars::POS.find_index(panjabi_word_params[:pos])
     @panjabi_word.score     = 0
+    @panjabi_word.approved  = false
 
     @panjabi_word.save
 
     @translation = @panjabi_word.translations.new()
-    @translation.language = 1
-    @translation.meaning = panjabi_word_params[:translation]
+    @translation.language_id =  Global::Vars::LANGUAGES.find_index(panjabi_word_params[:translation_language_id])
+    @translation.meaning = panjabi_word_params[:translation_meaning]
+    @translation.usage = panjabi_word_params[:translation_usage]
 
 	respond_to do |format|
 	  if @translation.save
@@ -68,6 +71,8 @@ class PanjabiWordsController < ApplicationController
   # DELETE /panjabi_words/1
   # DELETE /panjabi_words/1.json
   def destroy
+    @panjabi_word.translations.destroy_all
+    byebug
 	@panjabi_word.destroy
 	respond_to do |format|
 	  format.html { redirect_to panjabi_words_url, notice: 'Panjabi word was successfully destroyed.' }
@@ -92,6 +97,6 @@ class PanjabiWordsController < ApplicationController
 
 	# Only allow a list of trusted parameters through.
 	def panjabi_word_params
-	  params.require(:panjabi_word).permit(:gurmukhi, :shahmukhi, :roman, :phonetics, :anuvaad, :usage, :pos, :score, :approved, :translation)
+	  params.require(:panjabi_word).permit(:gurmukhi, :shahmukhi, :roman, :phonetics, :anuvaad, :usage, :pos, :score, :approved, :translation_usage, :translation_meaning, :translation_language_id)
 	end
   end

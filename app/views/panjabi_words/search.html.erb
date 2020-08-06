@@ -8,7 +8,7 @@
         <%= result.gurmukhi %>
       </h1>
       <h1 class="subtitle is-6" style="color:red">
-        <%= result.pos if !result.pos.nil? %>
+        <%= Global::Vars::POS[result.pos] if !result.pos.nil? %>
       </h1>
       <p style="font-style:itaclic; margin-bottom:8px">
       <%= result.phonetics if !result.phonetics.nil? %>
