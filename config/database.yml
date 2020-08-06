@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: punjabi_dictionary
+  database: panjabi_dict
   username: itachi
   password: 1nt0th3w1ld
 

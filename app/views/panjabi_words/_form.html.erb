@@ -12,49 +12,57 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :gurmukhi %>
-    <%= form.text_field :gurmukhi %>
+    <%= form.label :gurmukhi, class:"label" %>
+    <%= form.text_field :gurmukhi, class:"input" %>
   </div>
 
   <div class="field">
-    <%= form.label :shahmukhi %>
-    <%= form.text_field :shahmukhi %>
+    <%= form.label :shahmukhi, class:"label" %>
+    <%= form.text_field :shahmukhi, class:"input" %>
   </div>
 
   <div class="field">
-    <%= form.label :roman %>
-    <%= form.text_field :roman %>
+    <%= form.label :roman, class:"label" %>
+    <%= form.text_field :roman, class:"input" %>
   </div>
 
   <div class="field">
-    <%= form.label :phonetics %>
-    <%= form.text_field :phonetics %>
+    <%= form.label :phonetics, class:"label" %>
+    <%= form.text_field :phonetics, class:"input" %>
   </div>
 
   <div class="field">
-    <%= form.label :anuvaad %>
-    <%= form.text_area :anuvaad %>
+    <%= form.label :anuvaad, class:"label" %>
+    <%= form.text_area :anuvaad, class:"textarea is-small" %>
   </div>
 
   <div class="field">
-    <%= form.label :usage %>
-    <%= form.text_area :usage %>
+    <%= form.label :usage, class:"label" %>
+    <%= form.text_area :usage, class:"textarea is-small" %>
   </div>
 
-  <div class="field">
-    <%= form.label :pos %>
-    <%= form.text_field :pos %>
-  </div>
+  <%# <div class="field"> %>
+  <%#   <%= form.label :pos, class:"label" %1> %>
+  <%#   <%= form.text_field :pos, class:"select" %1> %>
+  <%# </div> %>
 
-  <div class="field">
-    <%= form.label :score %>
-    <%= form.number_field :score %>
-  </div>
+  <select name="panjabi_word[pos]" id="panjabi_word_pos">
+    <% pos = Global::Vars::POS %>
+    <% for i in 0..pos.length()-1 do %>
+      <% option = pos[i] %>
+      <option value""><%= option %></p>
+    <% end %>
+</select>
 
-  <div class="field">
-    <%= form.label :approved %>
-    <%= form.check_box :approved %>
-  </div>
+  <%# <div class="field"> %>
+  <%#   <%= form.label :score, class:"label" %1> %>
+  <%#   <%= form.number_field :score, class:"input" %1> %>
+  <%# </div> %>
+
+  <%# <div class="field"> %>
+  <%#   <%= form.label :approved, class:"label" %1> %>
+  <%#   <%= form.check_box :approved, class:"input" %1> %>
+  <%# </div> %>
 
   <div class="actions">
     <%= form.submit %>
