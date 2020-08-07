@@ -1,12 +1,9 @@
 <nav role="navigation" aria-label="main navigation">
   <div class="div-wrapper">
     <div class="navbar-content">
-      <div class="navbar-heading">
-        <a href="<%= homepage_home_url%>">
-          Panjabi Dictionary
-        </a>
+      <div class="navbar-item">
+        <%=  link_to "Home", new_user_session_url%>
       </div>
-
       <div class="navbar-item">
         <%=  link_to "Login", new_user_session_url if !user_signed_in? %>
         <%=  link_to "Signup", new_user_registration_url if !user_signed_in? %>

@@ -1,6 +1,7 @@
 <section style="display: flex; justify-content: space-around">
   <div class="div-wrapper">
     <div class="search-container">
+      <h1>Panjabi Dictionary</h1>
       <%= form_tag(search_page_path, :method => "get") do %>
         <%= search_field_tag :search, params[:search],autocomplete: "off", placeholder: "Search", class: "input" %>
         <%= button_tag "Search", :class => 'button is-primary',:name => nil%>
