@@ -1,6 +1,6 @@
 <%= form_with(model: panjabi_word, local: true) do |form| %>
   <% if panjabi_word.errors.any? %>
-    <div id="error_explanation">
+    <div class="error_explanation">
       <h2><%= pluralize(panjabi_word.errors.count, "error") %> prohibited this panjabi_word from being saved:</h2>
 
       <ul>
@@ -11,78 +11,77 @@
     </div>
   <% end %>
 
-  <h2 class="title is-4">Panjabi Word</h2>
+  <div class="word-section">
+    <h2 class="word-subtitle">Word</h2>
 
-  <div class="field">
-    <%= form.label :gurmukhi, class:"label" %>
-    <%= form.text_field :gurmukhi, class:"input" %>
+    <div class="pos">
+      <select name="panjabi_word[pos]" class="panjabi_word_pos">
+        <% pos = Global::Vars::POS %>
+        <% for i in 0..pos.length()-1 do %>
+          <% option = pos[i] %>
+          <option value""><%= option %></p>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="gurmukhi">
+      <%= form.label :gurmukhi %>
+      <%= form.text_field :gurmukhi %>
+    </div>
+
+    <div class="anuvaad">
+      <%= form.label :anuvaad %>
+      <%= form.text_area :anuvaad %>
+    </div>
+
+    <div class="shahmukhi">
+      <%= form.label :shahmukhi %>
+      <%= form.text_field :shahmukhi %>
+    </div>
+
+    <div class="roman">
+      <%= form.label :roman %>
+      <%= form.text_field :roman %>
+    </div>
+
+    <div class="phonetics">
+      <%= form.label :phonetics %>
+      <%= form.text_field :phonetics %>
+    </div>
+
+    <div class="usage">
+      <%= form.label :usage %>
+      <%= form.text_area :usage %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :shahmukhi, class:"label" %>
-    <%= form.text_field :shahmukhi, class:"input" %>
-  </div>
+  <hr style="margin-top:30px; border-top: 1px solid lightgrey;">
 
-  <div class="field">
-    <%= form.label :roman, class:"label" %>
-    <%= form.text_field :roman, class:"input" %>
-  </div>
+  <div class="translation-section">
+    <h2 class="translation-subtitle">Translation</h2>
 
-  <div class="field">
-    <%= form.label :phonetics, class:"label" %>
-    <%= form.text_field :phonetics, class:"input" %>
-  </div>
+    <div class="translation-language">
+      <select name="panjabi_word[translation_language_class]" id="panjabi_word_language_id">
+        <% languages = Global::Vars::LANGUAGES %>
+        <% for i in 0..languages.length()-1 do %>
+          <% option = languages[i] %>
+          <option value""><%= option %></p>
+        <% end %>
+      </select>
+    </div>
 
-  <div class="field">
-    <%= form.label :anuvaad, class:"label" %>
-    <%= form.text_field :anuvaad, class:"input" %>
-  </div>
+    <div class="translation-meaning">
+      <%= form.label :meaning %>
+      <%= form.text_field :translation_meaning %>
+    </div>
 
-  <div class="field">
-    <%= form.label :usage, class:"label" %>
-    <%= form.text_field :usage, class:"input" %>
-  </div>
+    <div class="translation-usage">
+      <%= form.label :usage %>
+      <%= form.text_field :translation_usage %>
+    </div>
 
-  <%# <div class="field"> %>
-    <%#   <%= form.label :pos, class:"label" %1> %>
-    <%#   <%= form.text_field :pos, class:"select" %1> %>
-    <%# </div> %>
-
-  <div class="field">
-    <%= form.label :pos, class:"label" %>
-    <select name="panjabi_word[pos]" id="panjabi_word_pos">
-      <% pos = Global::Vars::POS %>
-      <% for i in 0..pos.length()-1 do %>
-        <% option = pos[i] %>
-        <option value""><%= option %></p>
-      <% end %>
-    </select>
-  </div>
-
-  <h2 class="title is-4">Translation</h2>
-
-  <div class="field">
-    <%= form.label :language, class:"label" %>
-    <select name="panjabi_word[translation_language_id]" id="panjabi_word_language_id">
-      <% languages = Global::Vars::LANGUAGES %>
-      <% for i in 0..languages.length()-1 do %>
-        <% option = languages[i] %>
-        <option value""><%= option %></p>
-      <% end %>
-    </select>
-  </div>
-
-  <div class="field">
-    <%= form.label :meaning, class:"label" %>
-    <%= form.text_field :translation_meaning, class:"input" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :usage, class:"label" %>
-    <%= form.text_field :translation_usage, class:"input" %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="translation-submit">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

@@ -1,3 +1,69 @@
 // Place all the styles related to the PanjabiWords controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// -------------------------------------------------------------------------------- SUBMISSIONS PAGE
+table{
+    border-collapse: collapse;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+th{
+    background: var(--light-grey4);
+}
+
+tr:nth-child(even){
+    background: var(--light-grey6);
+}
+
+// -------------------------------------------------------------------------------- FORMS PAGE
+// New-Central-Container refers to the one used for the "new word" page
+.new-central-container{
+    margin: 0px 10px;
+    display: flex;
+    flex-direction : column;
+    align-items: stretch;
+}
+
+.new-central-container .word-section, .new-central-container .translation-section{
+    display               : grid;
+    grid-column-gap       : 10px;
+}
+
+.new-central-container label{
+    display    : block;
+    font-size  : x-small;
+    color      : var(--dark-grey2)
+}
+
+.word-section div, .translation-section div{
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+}
+
+// ------------------------------------------------------------------------------- LAPTOP SPECIFIC SETTINGS
+@media only screen and (min-width: 800px) {
+    .anuvaad{
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 2;
+    }
+
+    .anuvaad textarea{
+        flex-grow: 2;
+    }
+
+    .usage{
+        grid-column: 2 / span 1;
+        grid-row: 4 / span 2;
+    }
+
+    .usage textarea{
+        flex-grow: 2;
+    }
+
+}
