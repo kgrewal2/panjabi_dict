@@ -3,6 +3,15 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 // -------------------------------------------------------------------------------- SUBMISSIONS PAGE
+.submissions-central-container{
+    flex-direction: column;
+    align-items: center;
+}
+
+.submissions-central-container h1{
+    font-family: "EB Garamond", serif;
+}
+
 table{
     border-collapse: collapse;
 }
@@ -20,8 +29,12 @@ tr:nth-child(even){
     background: var(--light-grey6);
 }
 
-// -------------------------------------------------------------------------------- FORMS PAGE
+// -------------------------------------------------------------------------------- SUBMIT WORD PAGE
 // New-Central-Container refers to the one used for the "new word" page
+.new-central-container h1, .new-central-container h2{
+    font-family: "EB Garamond", serif;
+}
+
 .new-central-container{
     margin: 0px 10px;
     display: flex;
