@@ -1,0 +1,35 @@
+<div class="outer-container">
+  <div class="central-container">
+    <h1>Profile</h1>
+
+    <h2>Edit Profile </h2>
+    <%= form_tag(save_profile_path, method: 'post', class: 'profile') do %>
+      <div id="first_name">
+        <%= label_tag :first_name %>
+        <%= text_field_tag :first_name, current_user.first_name %>
+      </div>
+
+      <div id="last_name">
+        <%= label_tag :last_name %>
+        <%= text_field_tag :last_name, current_user.last_name %>
+      </div>
+      <div id="facebook">
+        <%= label_tag :facebook %>
+        <%= text_field_tag :facebook, current_user.facebook %>
+      </div>
+      <div id="twitter">
+        <%= label_tag :twitter %>
+        <%= text_field_tag :twitter , current_user.twitter%>
+      </div>
+      <div id="status">
+        <%= label_tag :status %>
+        <%= text_area_tag :status, current_user.status%>
+      </div>
+      <%= button_to "Save", {class: 'Something'}%>
+
+    <% end %>
+    <%=  button_to "Submissions", submissions_path, :method => :get if user_signed_in? %>
+    <%=  button_to "Logout", destroy_user_session_url, :method => :delete if user_signed_in? %>
+
+  </div>
+</div>

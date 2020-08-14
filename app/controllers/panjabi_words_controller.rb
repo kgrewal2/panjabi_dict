@@ -45,7 +45,7 @@ class PanjabiWordsController < ApplicationController
 
 	respond_to do |format|
 	  if @translation.save
-		format.html { redirect_to @panjabi_word, notice: 'Panjabi word was successfully created.' }
+		format.html { redirect_to submissions_url, notice: 'Panjabi word was successfully created.' }
 		format.json { render :show, status: :created, location: @panjabi_word }
 	  else
 		format.html { render :new }
@@ -72,10 +72,9 @@ class PanjabiWordsController < ApplicationController
   # DELETE /panjabi_words/1.json
   def destroy
     @panjabi_word.translations.destroy_all
-    byebug
 	@panjabi_word.destroy
 	respond_to do |format|
-	  format.html { redirect_to panjabi_words_url, notice: 'Panjabi word was successfully destroyed.' }
+	  format.html { redirect_to submissions_url, notice: 'Panjabi word was successfully destroyed.' }
 	  format.json { head :no_content }
 	end
   end

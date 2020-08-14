@@ -15,73 +15,120 @@
  */
 
 /* -------------------------------------------------------------------------------- GLOBAL */
-html, body {
-    font-family : 'Roboto', sans-serif;
-    margin      : 0;
-    padding     : 0;
-    font-size   : 16px;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
 }
 
-input, textarea{
-    background : var(--light-grey5);
-    color      : var(--dark-grey6);
-    border        : none;
-    padding       : 5px 10px;
-    border-radius : 5px;
-    margin        : 2px;
+input,
+textarea {
+    background: var(--light-grey5);
+    color: var(--dark-grey6);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
 }
 
 /* -------------------------------------------------- CLASS-LEVEL GLOBAL */
-.central-container{
+.central-container {
     padding-top: 30px;
-    width: 1000px;
     display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1000px;
 }
 
-.outer-container{
+.central-container h1 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+.outer-container {
     display: flex;
     justify-content: space-around;
 }
 
-div.actions input{
-    border        : none;
-    padding       : 5px 10px;
-    border-radius : 5px;
-    margin        : 2px;
+div.actions input {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 2px;
 }
 
-div.actions input, button{
-    background : var(--system-blue);
-    color      : white;
+/* -------------------------------------------------------------------------------- GLOBAL FORMS */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 10px;
 }
 
-div.actions input, button:hover{
-    cursor: pointer;
+form .field {
+    width: 100%;
 }
 
+form .field input.input {
+    width: 100%;
+}
+
+form input.button, button {
+    background: var(--system-blue);
+    margin: 10px auto;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+input, textarea {
+    box-sizing: border-box;
+}
+
+form *{
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+}
 /* -------------------------------------------------------------------------------- NAVBAR */
 nav {
-    background      : var(--light-grey5);
-    border-bottom   : 2px solid var(--light-grey1);
-    display         : flex;
-    justify-content : space-around;
+    background: var(--light-grey5);
+    border-bottom: 2px solid var(--light-grey1);
+    display: flex;
+    justify-content: space-around;
 }
 
-nav .central-container{
-    justify-content : space-between;
-    padding         : 10px;
-    flex-wrap       : wrap;
+nav .central-container {
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .navbar-item {
-    display         : flex;
-    flex-wrap       : wrap;
-    justify-content : space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.navbar-item a, .navbar-item a:visited {
-    background      : none;
-    margin          : 0px 20px;
-    text-decoration : none;
-    color           : black;
+.navbar-item a,
+.navbar-item a:visited {
+    background: none;
+    margin: 0px 20px;
+    text-decoration: none;
+    color: black;
+}
+
+/* -------------------------------------------------------------------------------- DEVISE SIGNUP */
+.new_user .actions{
+    text-align: center;
 }

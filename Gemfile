@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 # Error with rails console
 gem 'irb'
-
+# Debugging
 gem 'byebug'
 
 # Reduces boot times through caching; required in config/boot.rb
