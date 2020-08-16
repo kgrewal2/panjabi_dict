@@ -74,3 +74,25 @@ textarea{
     }
 
 }
+
+// -------------------------------------------------------------------------------- SEARCH RESULTS
+.word-entry{
+    background: var(--light-grey5);
+    padding: 10px;
+    border-radius: 10px;
+    margin:10px;
+}
+
+.word-entry *{
+    margin: 5px;
+}
+
+.word-entry>.word-meaning{
+    padding-left:40px;
+}
+
+.word-entry>.translation-entry{
+    margin:10px;
+    border: var(--light-grey4) solid 1px;
+    width:auto;
+}

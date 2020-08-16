@@ -84,7 +84,10 @@ class PanjabiWordsController < ApplicationController
 	  redirect_to(root_path, alert: "Empty field!") and return
 	else
 	  @parameter = params[:search].downcase
-	  @results = PanjabiWord.all.where("lower(gurmukhi) LIKE :search", search: "#@parameter%")
+      @results = PanjabiWord.all.where("lower(gurmukhi) LIKE :search", search: "#@parameter%")
+      if @results.empty?
+        redirect_to(root_path, notice: "No Results Found") and return
+      end
 	end
   end
 

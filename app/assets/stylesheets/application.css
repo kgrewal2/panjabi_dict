@@ -66,6 +66,16 @@ div.actions input {
     margin: 2px;
 }
 
+.alert{
+    background: rgba(255,0,0,0.2);
+    margin:0px;
+}
+
+.notice{
+    background: rgba(0,125,255,0.2);
+    margin:0px;
+}
+
 /* -------------------------------------------------------------------------------- GLOBAL FORMS */
 form {
     display: flex;

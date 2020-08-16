@@ -1,36 +1,55 @@
 
-<h1 class="title is-4">Search Results</h1>
+<div class="outer-container">
+  <div class="central-container">
+    <h1 class="title is-4">Search Results</h1>
 
-<% @results.each do |result| %>
-  <div class="container" >
-    <div class="notification" style="border-radius:30px">
-      <h1 class="title is-3">
-        <%= result.gurmukhi %>
-      </h1>
-      <h1 class="subtitle is-6" style="color:red">
-        <%= Global::Vars::POS[result.pos] if !result.pos.nil? %>
-      </h1>
-      <p style="font-style:itaclic; margin-bottom:8px">
-      <%= result.phonetics if !result.phonetics.nil? %>
-      </p>
-      <p style="font-size:20px">
-      <%= result.anuvaad if !result.anuvaad.nil? %>
-      </p>
-      <p >
-      <%= result.shahmukhi if  !result.shahmukhi.nil? %>
-      </p>
-      <p style="font-size:16px; margin-top:5px; color: grey">
-      <%= result.usage if !result.usage.nil? %>
-      </p>
-      <p>
-      <%= result.score if !result.score.nil? %>
-      </p>
-      <p style="margin-top:10px"> Submitted by:
-      <%= User.find(result.user_id).email %>
-      </p>
-    </div>
-    </br>
-  </div>
+    <% @results.each do |result| %>
+      <div class="word-entry" >
+          <p style="font-size: 30px">
+            <%= result.gurmukhi %>
+          </p>
+          <p style="font-size: 20px" >
+          <%= result.shahmukhi if  !result.shahmukhi.nil? %>
+          </p>
+          <p >
+          <%= result.phonetics if !result.phonetics.nil? %>
+          </p>
+          <p >
+          <b><%= Global::Vars::POS[result.pos] if !result.pos.nil? %></b>
+          </p>
+          <div class="word-meaning">
+          <p >
+          <%= result.anuvaad if !result.anuvaad.nil? %>
+          </p>
+          <p >
+          <%= result.usage if !result.usage.nil? %>
+          </p>
+          </div>
+          <p> Score:
+          <%= result.score if !result.score.nil? %>
+          </p>
+          <p > Submitted by:
+          <%= User.find(result.user_id).email %>
+          </p>
+          <div class="translation-entry">
+          <% result.translations.each do |translation| %>
+            <p>
+            <b>
+              <%= Global::Vars::LANGUAGES[translation.language_id] if !translation.language_id.nil? %>
+            </b>
+            </p>
+            <p>
+            <%= translation.meaning %>
+            </p>
+            <p>
+            <%= translation.usage %>
+            </p>
+          <% end %>
+          </div>
+
+      </div>
 <% end %>
+  </div>
+</div>
 
 
